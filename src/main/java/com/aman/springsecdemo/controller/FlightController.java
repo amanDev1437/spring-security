@@ -28,7 +28,7 @@ public class FlightController {
     @PostMapping("/flight")
     public ResponseEntity<?> createFlight(@Valid @RequestBody FlightDto flightDto, BindingResult result) {
 
-        int createdFlight = flightService.createFlight(flightDto);
+        String createdFlight = flightService.createFlight(flightDto);
         return new ResponseEntity<>(createdFlight, HttpStatus.CREATED);
     }
 

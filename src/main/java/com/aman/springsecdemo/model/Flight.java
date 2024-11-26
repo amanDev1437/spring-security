@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 public class Flight {
 
     @Id
-    private int id;
+    private String id;
 
     @NotEmpty(message = "Flight number is required")
     @Indexed(unique = true)

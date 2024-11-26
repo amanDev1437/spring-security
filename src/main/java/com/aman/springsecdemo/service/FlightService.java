@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public interface FlightService {
 
-    int createFlight(FlightDto flightDto);
+    String createFlight(FlightDto flightDto);
 
     List<FlightDto> getFlights(int page,int size);
 

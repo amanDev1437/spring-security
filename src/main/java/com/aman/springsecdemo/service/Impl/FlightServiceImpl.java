@@ -21,7 +21,7 @@ public class FlightServiceImpl implements FlightService {
     private FlightRepo flightRepo;
 
     @Override
-    public int createFlight(FlightDto flightDto) {
+    public String createFlight(FlightDto flightDto) {
 
         Flight flight = this.covertToModel(flightDto);
 
@@ -119,7 +119,6 @@ public class FlightServiceImpl implements FlightService {
 
         FlightDto flightDto = new FlightDto();
 
-        flightDto.setId(flight.getId());
         flightDto.setFlightNumber(flight.getFlightNumber());
         flightDto.setDestination(flight.getDestination());
         flightDto.setOrigin(flight.getOrigin());
@@ -136,7 +135,6 @@ public class FlightServiceImpl implements FlightService {
 
         Flight flight = new Flight();
 
-        flight.setId(flightDto.getId());
         flight.setFlightNumber(flightDto.getFlightNumber());
         flight.setDestination(flightDto.getDestination());
         flight.setOrigin(flightDto.getOrigin());

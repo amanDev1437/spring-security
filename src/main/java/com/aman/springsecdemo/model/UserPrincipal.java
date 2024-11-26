@@ -10,9 +10,7 @@ import java.util.stream.Collectors;
 
 public class UserPrincipal implements UserDetails{
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	
@@ -24,12 +22,11 @@ public class UserPrincipal implements UserDetails{
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-	
-		//return Collections.singleton(new SimpleGrantedAuthority("USER"));
 		return user.getRoles().stream()
-				.map(role->new SimpleGrantedAuthority(role))
+				.map(role -> new SimpleGrantedAuthority("ROLE_" + role)) // Adding the prefix
 				.collect(Collectors.toSet());
 	}
+
 
 	@Override
 	public String getPassword() {
